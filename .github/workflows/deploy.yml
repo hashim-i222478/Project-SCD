@@ -16,7 +16,7 @@ jobs:
     - name: Set up Docker to use Minikube's environment
       run: |
         echo "Configuring Docker to use Minikube's daemon..."
-        FOR /f "tokens=*" %i IN ('minikube.exe docker-env') DO %i
+        eval $(minikube docker-env)
 
     - name: Build Backend Docker Image
       run: |
@@ -42,7 +42,7 @@ jobs:
 
     - name: Deploy to Minikube
       run: |
-        kubectl.exe apply -f backend-deployment.yaml
-        kubectl.exe apply -f backend-service.yaml
-        kubectl.exe apply -f frontend-deployment.yaml
-        kubectl.exe apply -f frontend-service.yaml
+        kubectl.exe apply -f app\backend-deployment.yaml
+        kubectl.exe apply -f app\backend-service.yaml
+        kubectl.exe apply -f app\frontend-deployment.yaml
+        kubectl.exe apply -f app\frontend-service.yaml
