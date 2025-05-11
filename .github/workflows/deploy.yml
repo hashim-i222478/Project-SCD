@@ -16,7 +16,7 @@ jobs:
     - name: Set up Docker to use Minikube's environment
       run: |
         echo "Configuring Docker to use Minikube's daemon..."
-        eval $(minikube docker-env)
+        & minikube docker-env --shell powershell | Invoke-Expression
 
     - name: Build Backend Docker Image
       run: |
