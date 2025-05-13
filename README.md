@@ -2,10 +2,12 @@ Project Running Instructions
 How to Start the App from Scratch
 1.	Clone the repository:
 2.	git clone https://github.com/hashim-i222478/Project-SCD.git
-3.	Navigate to app/frontend and build the Docker image:
-4.	docker build -t hashim12/project-frontend-image:latest .
-5.	docker push hashim12/project-frontend-image:latest
-6.	Repeat for app/backend with hashim12/project-backend-image:latest.
+3.	Navigate to backend
+4.	npm install
+5.	npm start
+6.	Navigate to Frontend
+7.	npm install
+8.	npm run dev
 
 How to Deploy Locally Using Minikube
 1.	Start Minikube:
